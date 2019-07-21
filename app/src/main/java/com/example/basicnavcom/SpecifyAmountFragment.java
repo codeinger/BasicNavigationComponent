@@ -11,12 +11,13 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 
 public class SpecifyAmountFragment extends Fragment {
 
     View view;
-    Button Send;
+    Button Send,Cancel;
     EditText editText;
 
     @Override
@@ -36,6 +37,14 @@ public class SpecifyAmountFragment extends Fragment {
                         SpecifyAmountFragmentArgs.fromBundle(getArguments()).getName()
                         ,Integer.parseInt(editText.getText().toString()));
                 Navigation.findNavController(view).navigate(directions);
+            }
+        });
+
+        Cancel = view.findViewById(R.id.cancel);
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigateUp();
             }
         });
 

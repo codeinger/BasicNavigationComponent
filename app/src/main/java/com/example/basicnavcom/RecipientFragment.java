@@ -20,7 +20,7 @@ import androidx.navigation.Navigation;
 public class RecipientFragment extends Fragment {
 
     View view;
-    Button Next;
+    Button Next,Cancel;
     EditText editText;
 
     public RecipientFragment() {
@@ -42,6 +42,14 @@ public class RecipientFragment extends Fragment {
             public void onClick(View view) {
                 NavDirections directions = RecipientFragmentDirections.actionRecipientFragmentToSpecifyAmountFragment(editText.getText().toString());
                 Navigation.findNavController(view).navigate(directions);
+            }
+        });
+
+        Cancel = view.findViewById(R.id.cancel);
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigateUp();
             }
         });
 
