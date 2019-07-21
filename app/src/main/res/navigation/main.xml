@@ -36,7 +36,14 @@
         android:id="@+id/confirmationFragment2"
         android:name="com.example.basicnavcom.ConfirmationFragment"
         android:label="Confirmation"
-        tools:layout="@layout/fragment_confirmation" />
+        tools:layout="@layout/fragment_confirmation" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/recipientFragment"
         android:name="com.example.basicnavcom.RecipientFragment"
@@ -62,6 +69,9 @@
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/transactionFragment"
